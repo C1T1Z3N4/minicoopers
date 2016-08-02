@@ -1,2 +1,2 @@
 # minicoopers
-[minicoopercounts](https://minicoopers.herokuapp.com)
+See [minicoopercounts](https://minicoopers.herokuapp.com)
