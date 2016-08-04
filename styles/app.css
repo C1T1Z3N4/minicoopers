@@ -15,6 +15,9 @@ h2 {
 #scores {
   border: 1px solid;
 }
+#link {
+    text-decoration: none;
+}
 
 /*  Selector is a class
     All elements (including different types) with the class will be styled
