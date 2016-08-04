@@ -12,9 +12,6 @@ h2 {
 /*  Selector is an id
     Only elements with the given id will be styled.  And there should only be one; id's should be unique to a page
 */
-#scores {
-  border: 1px solid;
-}
 
 /*  Selector is a class
     All elements (including different types) with the class will be styled
@@ -24,4 +21,7 @@ h2 {
 }
 .noUnderline {
     text-decoration: none;
+}
+.tables {
+    border:1px solid;
 }
