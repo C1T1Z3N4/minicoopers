@@ -1,1 +1,24 @@
-#
+/*  Selector is an element.  
+    All elements of this type will have the same styles applied 
+*/
+h1 {
+  color: red;
+}
+
+h2 {
+  color: blue;
+}
+
+/*  Selector is an id
+    Only elements with the given id will be styled.  And there should only be one; id's should be unique to a page
+*/
+#scores {
+  border: 1px solid;
+}
+
+/*  Selector is a class
+    All elements (including different types) with the class will be styled
+*/
+.subTitle {
+  text-decoration: underline;
+}
