@@ -16,9 +16,9 @@
     <h1>Mini Cooper Counts</h1>
     <p>The objective of the game is to get the highest score</p>
   </div>
-  
+
   <div class="container">
-    
+
     <h3>The rules</h3>
 
     <ol>
@@ -28,8 +28,6 @@
     </ol>
 
     <h3>How to play</h3>
-
-  
 
   <ul>
    <li>When you see a Mini Cooper, yell "Mini Cooper"</li>
@@ -55,59 +53,59 @@
     <th>Total</th>
   </tr>
 
-  <tr>
+  <tr class="clanBruce">
     <td rowspan="5">The Bruces</td>
     <td>Pete</td>
-    <td>11</td>
-    <td rowspan="5">14</td>
+    <td class="score">11</td>
+    <td rowspan="5" class="total"></td>
   </tr>
-  <tr>
+  <tr class="clanBruce">
     <td>Caleb</td>
-    <td>1</td>
+    <td class="score">1</td>
   </tr>
-  <tr>
+  <tr class="clanBruce">
     <td>Caroline</td>
-    <td>0</td>
+    <td class="score">0</td>
   </tr>
-  <tr>
+  <tr class="clanBruce">
     <td>Ethan</td>
-    <td>2</td>
+    <td class="score">2</td>
   </tr>
-  <tr>
+  <tr class="clanBruce">
     <td>Anna</td>
-    <td>0</td>
+    <td class="score">0</td>
   </tr>
 
-  <tr>
+  <tr class="clanCampbell">
     <td rowspan="3">The Campbells</td>
     <td>Callum</td>
-    <td>7</td>
-    <td rowspan="3">13</td>
+    <td class="score">7</td>
+    <td rowspan="3" class="total"></td>
   </tr>
-  <tr>
+  <tr class="clanCampbell">
     <td>Malachy</td>
-    <td>4</td>
+    <td class="score">4</td>
   </tr>
-  <tr>
+  <tr class="clanCampbell">
     <td>Joe</td>
-    <td>2</td>
+    <td class="score">2</td>
   </tr>
 
-  <tr>
+  <tr class="clanKerr">
     <td rowspan="3">The Kerrs</td>
     <td>Peter</td>
-    <td>10</td>
-    <td rowspan="3">10</td>
+    <td class="score">10</td>
+    <td rowspan="3" class="total"></td>
   </tr>
-  <tr>
+  <tr class="clanKerr">
     <td>James</td>
-    <td>0</td>
+    <td class="score">0</td>
   </tr>
-  <tr>
+  <tr class="clanKerr">
     <td>Sarah</td>
-    <td>0</td>
+    <td class="score">0</td>
   </tr>
-  
+
 </table>
 
 <p>If you would like to contribute then send pull requests to
@@ -115,6 +113,25 @@
 </p>
 
 </div>
+
+<script>
+
+  var calculateTotals = function() {
+      var clans = ['clanBruce', 'clanCampbell', 'clanKerr'];
+
+      $.each(clans, function(index, clan) {
+        var total = 0;
+        $( '.' + clan + ' .score').each(function() {
+          total += Number($(this).text());
+        });
+
+        $('.' + clan + ' .total').text(total);
+      });
+  };
+
+  $(document).ready(calculateTotals);
+
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
