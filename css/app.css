@@ -154,3 +154,9 @@ td {
 .list li {
     margin: 10px 0;
 }
+
+@media (max-width: 767px) {
+    .menu {
+        display: none;
+    }
+}
