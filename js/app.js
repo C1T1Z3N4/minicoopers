@@ -47,7 +47,6 @@ var generateScores = function() {
 var initialiseFullPage = function() {
     $('#fullpage').fullpage({
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#ccddff', '#7BAABE', '#AEAEAE'],
-        anchors: ['intro', 'theRules', 'theWay', 'theScores'],
         navigation: true,
         navigationPosition: 'right'
     });
