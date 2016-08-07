@@ -46,8 +46,8 @@ var generateScores = function() {
 
 var initialiseFullPage = function() {
     $('#fullpage').fullpage({
-        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#ccddff'],
-        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#ccddff', '#7BAABE'],
+        anchors: ['intro', 'theRules', 'theWay', 'theScores'],
         menu: '#menu',
         navigation: true,
         navigationPosition: 'right'
