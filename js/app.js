@@ -44,9 +44,20 @@ var generateScores = function() {
     });
 };
 
+var initialiseFullPage = function() {
+    $('#fullpage').fullpage({
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#ccddff'],
+        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+        menu: '#menu',
+        navigation: true,
+        navigationPosition: 'right'
+    });
+};
+
 var bootstrapper = function() {
     calculateTotals();
     generateScores();
+    initialiseFullPage();
 }
 
 $(document).ready(bootstrapper);

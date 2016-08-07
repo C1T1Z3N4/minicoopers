@@ -5,20 +5,79 @@
 
   <title>Mini Cooper Counts</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css">
+  <link rel="stylesheet" type="text/css" href="css/app.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script>
 
-  <script type="text/javascript" src="clans.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="js/clans.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+
+  <ul id="menu">
+    <li data-menuanchor="secondPage"><a href="#secondPage">The Scores</a></li>
+    <li data-menuanchor="thirdPage"><a href="#thirdPage">The Rules</a></li>
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">The Way</a></li>
+  </ul>
+
+  <div id="fullpage">
+
+    <div class="section">
+      <h1>Mini Cooper Counts</h1>
+      <p>The objective of the game is to count Mini Coopers</p>
+    </div>
+
+    <div class="section container">
+     <h2>The Scores</h2>
+
+     <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Clan</th>
+          <th>Member</th>
+          <th>Score</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+
+      <tbody id="scores">
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="section">
+    <h2>The Rules</h2>
+
+    <ol>
+      <li>The first rule of Mini Cooper Counts is: you do not talk about Mini Cooper Counts.</li>
+      <li>The second rule of Mini Cooper Counts is: you DO NOT talk about Mini Cooper Counts!</li>
+      <li>Third rule of Mini Cooper Counts: if someone yells “Mini Cooper!", it counts.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>The Way</h2>
+
+    <ul>
+     <li>When you see a Mini Cooper, yell "Mini Cooper"</li>
+     <li>Take a picture of it</li>
+     <li>Share your picture on the Mini Cooper Whatsapp group</li>
+     <li>Pester the Mini Cooper admins (Callum and Malachy) if your score doesn't update</li>
+     <li>Celebrate as your clan thrashes the others</li>
+     <li>The clan with the highest scores at the end of the month wil be the winner</li>
+     <li>Scores will be reset on the first day of the month</li>
+     <li>No using pictures off the internet</li>
+     <li>If it's your birthday you get 10 points</li>
+     </ul>
+ </div>
+</div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
