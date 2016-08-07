@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 /* Reset CSS
- * --------------------------------------- */
+* --------------------------------------- */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
     padding: 0;
@@ -22,26 +22,12 @@ h1,h2,h3,h4,h5,h6 {
 
 
 /* Custom CSS
- * --------------------------------------- */
+* --------------------------------------- */
 
- body {
+body {
     font-family: arial,helvetica;
     color: #333;
     color: rgba(0,0,0,0.5);
-}
-
-h1 {
-    font-size: 6em;
-}
-h2 {
-    font-size: 5em;
-}
-h3 {
-    font-size: 5em;
-}
-
-p {
-    font-size: 2em;
 }
 
 .section {
@@ -56,20 +42,6 @@ p {
 }
 
 /* Table */
-@media (max-width: 600px) {
-  .table {
-    width: 100%;
-    margin: 0;
-  }
-}
-
-@media (min-width: 600px) {
-  .table {
-    width: 80%;
-    margin: auto;
-  }
-}
-
 table {
     border-spacing: 0;
 }
@@ -103,7 +75,7 @@ td {
     border: 1px solid #eceeef;
 }
 
- .table-bordered td, .table-bordered th {
+.table-bordered td, .table-bordered th {
     border: 1px solid #eceeef;
 }
 
@@ -116,4 +88,41 @@ td {
     margin: 10px 0;
 }
 
+/* Media */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 5em;
+    }
 
+    h2 {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    .table {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 6em;
+    }
+
+    h2 {
+        font-size: 5em;
+    }
+
+    p {
+        font-size: 2em;
+    }
+
+    .table {
+        width: 80%;
+        margin: auto;
+    }
+}
