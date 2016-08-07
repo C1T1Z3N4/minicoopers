@@ -46,17 +46,28 @@ var generateScores = function() {
 
 var initialiseFullPage = function() {
     $('#fullpage').fullpage({
-        sectionsColor: ['#1bbc9b', '#4BBFC3', '#ccddff', '#7BAABE'],
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#ccddff', '#7BAABE', '#AEAEAE'],
         anchors: ['intro', 'theRules', 'theWay', 'theScores'],
         navigation: true,
         navigationPosition: 'right'
     });
 };
 
-var bootstrapper = function() {
-    calculateTotals();
-    generateScores();
-    initialiseFullPage();
-}
+var initialiseCountdown = function() {
+var timerId =
+  countdown(
+    new Date(2016, 8),
+    function(ts) {
+      document.getElementById('countdown').innerHTML = ts.toHTML("strong");
+    },
+    countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+};
 
-$(document).ready(bootstrapper);
+    var bootstrapper = function() {
+        calculateTotals();
+        generateScores();
+        initialiseFullPage();
+        initialiseCountdown();
+    }
+
+    $(document).ready(bootstrapper);
