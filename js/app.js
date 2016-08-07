@@ -57,7 +57,7 @@ var timerId =
   countdown(
     new Date(2016, 8),
     function(ts) {
-      document.getElementById('countdown').innerHTML = ts.toHTML("strong");
+      document.getElementById('countdown').innerHTML = ts.toHTML();
     },
     countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
 };
