@@ -59,12 +59,14 @@ p {
 @media (max-width: 600px) {
   .table {
     width: 100%;
+    margin: 0;
   }
 }
 
 @media (min-width: 600px) {
   .table {
     width: 80%;
+    margin: auto;
   }
 }
 
@@ -83,8 +85,6 @@ td {
 }
 
 .table {
-    margin: auto;
-    max-width: 80%;
     margin-bottom: 1rem;
 }
 
