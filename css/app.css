@@ -56,6 +56,18 @@ p {
 }
 
 /* Table */
+@media (max-width: 600px) {
+  .table {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .table {
+    width: 80%;
+  }
+}
+
 table {
     border-spacing: 0;
 }
@@ -72,7 +84,6 @@ td {
 
 .table {
     margin: auto;
-    width: 80%;
     max-width: 80%;
     margin-bottom: 1rem;
 }
@@ -104,3 +115,5 @@ td {
 .list li {
     margin: 10px 0;
 }
+
+
