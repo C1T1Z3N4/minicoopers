@@ -63,10 +63,10 @@ var timerId =
 };
 
     var bootstrapper = function() {
-        calculateTotals();
-        generateScores();
         initialiseFullPage();
         initialiseCountdown();
+        calculateTotals();
+        generateScores();
     }
 
     $(document).ready(bootstrapper);
