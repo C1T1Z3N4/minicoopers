@@ -8,7 +8,7 @@ var clans = [{
       "score": 2
     }, {
       "name": "Caroline",
-      "score": 0
+      "score": 1
     }, {
       "name": "Ethan",
       "score": 2
@@ -25,7 +25,7 @@ var clans = [{
       "score": 7
     }, {
       "name": "Joe",
-      "score": 2
+      "score": 5
     }, {
       "name": "Malachy",
       "score": 4
