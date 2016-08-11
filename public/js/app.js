@@ -6,7 +6,7 @@ var descendingTotal = function(a, b) {
     return b.total - a.total;
 };
 
-var calculateTotals = function() {
+var calculateTotals = function(clans) {
     $.each(clans, function(i, clan) {
         var total = 0;
         $.each(clan.members, function(j, member) {
@@ -20,7 +20,7 @@ var calculateTotals = function() {
     clans = clans.sort(descendingTotal);
 };
 
-var generateScores = function() {
+var generateScores = function(clans) {
 
     var scoresElement = $('#scores');
 
@@ -62,11 +62,17 @@ var timerId =
     countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
 };
 
-    var bootstrapper = function() {
-        initialiseFullPage();
-        initialiseCountdown();
-        calculateTotals();
-        generateScores();
-    }
+var getClans = function() {
+    $.get( "/clans", function(clans) {
+        calculateTotals(clans);
+        generateScores(clans);
+    });
+};
 
-    $(document).ready(bootstrapper);
+var bootstrapper = function() {
+    getClans();
+    initialiseFullPage();
+    initialiseCountdown();
+}
+
+$(document).ready(bootstrapper);
