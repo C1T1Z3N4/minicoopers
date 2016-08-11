@@ -1,15 +1,19 @@
 (function () {
     'use strict';
 
-    var log  = require('winston');
-    var app = require('express')();
-    var logger  = require('morgan');
+    var express = require('express');
+    var app        = express();
+    var log         = require('winston');
+    var logger    = require('morgan');
+    var path       = require('path');
+
+    var rootDir = path.dirname(process.mainModule.filename);
+    var publicDir = path.join(rootDir, 'public');
+
+    log.info('publicDir ' + publicDir);
 
     app.use(logger('combined'));
-
-    app.get("/", function(req, res) {
-        res.send('hello world');
-    });
+    app.use(express.static(publicDir));
 
     var port = process.env.PORT || 5000;
     app.listen(port, function() {
