@@ -17,7 +17,7 @@
 
     var port = process.env.PORT || 5000;
     app.listen(port, function() {
-        log.info("MiniCooperCounts started on " + port);
+        log.info("Mini cooper counts started on " + port);
     });
 }());
 
