@@ -7,13 +7,9 @@
     var logger    = require('morgan');
     var path       = require('path');
     var clans    = require('./models/clans');
-    var members    = require('./models/members');
 
     var rootDir = path.dirname(process.mainModule.filename);
     var publicDir = path.join(rootDir, 'public');
-
-    var mongoose = require('mongoose');
-    mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/minicoopers');
 
     app.use(logger('combined'));
     app.use(express.static(publicDir));
@@ -25,7 +21,7 @@
     });
 
     app.get("/api/member/:name", function(req, res) {
-        members.get(req.params.name, function(err, member) {
+        clans.getMember(req.params.name, function(err, member) {
             res.send(member);
         })
     });
