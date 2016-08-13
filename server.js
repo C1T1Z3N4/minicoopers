@@ -18,13 +18,13 @@
     app.use(logger('combined'));
     app.use(express.static(publicDir));
 
-    app.get("/clans", function(req, res) {
+    app.get("/api/clans", function(req, res) {
         clans.find({}, function(err, clans) {
             res.send(clans);
         })
     });
 
-    app.get("/member/:name", function(req, res) {
+    app.get("/api/member/:name", function(req, res) {
         members.get(req.params.name, function(err, member) {
             res.send(member);
         })

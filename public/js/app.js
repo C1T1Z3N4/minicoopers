@@ -63,7 +63,7 @@ var timerId =
 };
 
 var getClans = function() {
-    $.get( "/clans", function(clans) {
+    $.get( "/api/clans", function(clans) {
         calculateTotals(clans);
         generateScores(clans);
     });
