@@ -37,6 +37,7 @@
     });
 
     app.post("/api/scores/add", function(req, res) {
+        log.info('body: ' + req.body);
         var name = req.body.name;
         var value = Number(req.body.value);
 
