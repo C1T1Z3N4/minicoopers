@@ -43,6 +43,8 @@
         var name = req.body.name;
         var value = Number(req.body.value);
 
+        log.info('Adding ' + value + ' to ' + name);
+
         clans.addScore(name, value, function(err, scores) {
             if (scores) {
                 log.info('Added ' + value + ' to ' + name);
@@ -56,6 +58,8 @@
     app.post("/api/scores/take", function(req, res) {
         var name = req.body.name;
         var value = Number(req.body.value);
+
+        log.info('Taking ' + value + ' from ' + name);
 
         clans.takeScore(name, value, function(err, scores) {
             if (scores) {
