@@ -53,6 +53,20 @@
         })
     });
 
+    app.post("/api/scores/take", function(req, res) {
+        var name = req.body.name;
+        var value = Number(req.body.value);
+
+        clans.takeScore(name, value, function(err, scores) {
+            if (scores) {
+                log.info('Took ' + value + ' from ' + name);
+                res.send(scores);
+            } else {
+                res.status(404).send('Not found');
+            }
+        })
+    });
+
     var port = process.env.PORT || 5000;
     app.listen(port, function() {
         log.info("Mini cooper counts started on " + port);

@@ -47,6 +47,10 @@
         });
     };
 
+    clanSchema.statics.takeScore = function(name, value, cb) {
+      this.addScore(name, -1 * value, cb);
+    };
+
     module.exports = mongoose.model('clans', clanSchema);
 }());
 
