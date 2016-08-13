@@ -15,9 +15,19 @@
     app.use(express.static(publicDir));
 
     app.get("/api/clans", function(req, res) {
-        clans.find({}, function(err, clans) {
+        clans.all(function(err, clans) {
             if (clans) {
                 res.send(clans);
+            } else {
+                res.status(404).send('Not found');
+            }
+        })
+    });
+
+    app.get("/api/scores", function(req, res) {
+        clans.scores(function(err, scores) {
+            if (clans) {
+                res.send(scores);
             } else {
                 res.status(404).send('Not found');
             }

@@ -18,6 +18,16 @@
       this.find({}, cb);
     };
 
+    clanSchema.statics.scores = function(cb) {
+      this.aggregate([
+          { $unwind: '$members' },
+          { $project: { clan: '$name', score: '$members.score' } },
+          { $group: { _id: '$clan', score: { $sum: '$score' } } },
+          { $project: { clan: '$_id', score: '$score' } },
+          { $sort: { 'score': -1 } }
+      ], cb);
+    };
+
     clanSchema.statics.getMember = function(name, cb) {
       this.findOne({ "members.name": name}, {'members.$': 1}, cb);
     };
