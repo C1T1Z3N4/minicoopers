@@ -14,7 +14,7 @@
 
     app.use(logger('combined'));
     app.use(express.static(publicDir));
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
 
     app.get("/api/clans", function(req, res) {
         clans.all(function(err, clans) {
