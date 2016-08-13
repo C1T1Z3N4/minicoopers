@@ -6,10 +6,14 @@
     var log         = require('winston');
     var logger    = require('morgan');
     var path       = require('path');
-    var clans    = require('./clans');
+    var clans    = require('./models/clans');
+    var members    = require('./models/members');
 
     var rootDir = path.dirname(process.mainModule.filename);
     var publicDir = path.join(rootDir, 'public');
+
+    var mongoose = require('mongoose');
+    mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/minicoopers');
 
     app.use(logger('combined'));
     app.use(express.static(publicDir));
@@ -20,9 +24,9 @@
         })
     });
 
-    app.get("/member", function(req, res) {
-        clans.all(function(err, clans) {
-            res.send(clans);
+    app.get("/member/:name", function(req, res) {
+        members.get(req.params.name, function(err, member) {
+            res.send(member);
         })
     });
 
