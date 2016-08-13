@@ -16,13 +16,21 @@
 
     app.get("/api/clans", function(req, res) {
         clans.find({}, function(err, clans) {
-            res.send(clans);
+            if (clans) {
+                res.send(clans);
+            } else {
+                res.status(404).send('Not found');
+            }
         })
     });
 
     app.get("/api/member/:name", function(req, res) {
         clans.getMember(req.params.name, function(err, member) {
-            res.send(member);
+            if (member) {
+                res.send(member);
+            } else {
+                res.status(404).send('Not found');
+            }
         })
     });
 

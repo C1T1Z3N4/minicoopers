@@ -19,7 +19,7 @@
     };
 
     clanSchema.statics.getMember = function(name, cb) {
-      this.find({ "members.name": name}, {'members.$': 1}, cb);
+      this.findOne({ "members.name": name}, {'members.$': 1}, cb);
     };
 
     module.exports = mongoose.model('clans', clanSchema);
