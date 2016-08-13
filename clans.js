@@ -15,6 +15,10 @@
       members: [memberSchema]
     });
 
+    clanSchema.statics.all = function(cb) {
+      this.find({}, cb);
+    };
+
     module.exports = mongoose.model('clans', clanSchema);
 }());
 

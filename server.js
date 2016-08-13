@@ -20,6 +20,12 @@
         })
     });
 
+    app.get("/member", function(req, res) {
+        clans.all(function(err, clans) {
+            res.send(clans);
+        })
+    });
+
     var port = process.env.PORT || 5000;
     app.listen(port, function() {
         log.info("Mini cooper counts started on " + port);
