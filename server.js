@@ -1,18 +1,23 @@
 (function () {
     'use strict';
 
-    var express = require('express');
-    var app        = express();
-    var log         = require('winston');
-    var logger    = require('morgan');
-    var path       = require('path');
-    var clans    = require('./models/clans');
+    var express       = require('express');
+    var app              = express();
+    var log               = require('winston');
+    var logger          = require('morgan');
+    var path             = require('path');
+    var bodyParser = require('body-parser')
+    var clans           = require('./models/clans');
 
     var rootDir = path.dirname(process.mainModule.filename);
     var publicDir = path.join(rootDir, 'public');
 
     app.use(logger('combined'));
     app.use(express.static(publicDir));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({
+      extended: true
+    }));
 
     app.get("/api/clans", function(req, res) {
         clans.all(function(err, clans) {
@@ -34,10 +39,14 @@
         })
     });
 
-    app.get("/api/member/:name", function(req, res) {
-        clans.getMember(req.params.name, function(err, member) {
-            if (member) {
-                res.send(member);
+    app.post("/api/scores/add", function(req, res) {
+        var name = req.body.name;
+        var value = Number(req.body.value);
+
+        clans.addScore(name, value, function(err, scores) {
+            if (scores) {
+                log.info('Added ' + value + ' to ' + name);
+                res.send(scores);
             } else {
                 res.status(404).send('Not found');
             }

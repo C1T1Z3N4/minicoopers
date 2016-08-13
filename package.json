@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Deadpool2468/minicoopers#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "lodash": "^4.15.0",
     "mongoose": "^4.5.8",
     "morgan": "^1.7.0",
     "winston": "^2.2.0"

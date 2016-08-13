@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    var _ = require('lodash');
+
     var mongoose = require('mongoose');
     mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/minicoopers');
 
@@ -30,6 +32,19 @@
 
     clanSchema.statics.getMember = function(name, cb) {
       this.findOne({ "members.name": name}, {'members.$': 1}, cb);
+    };
+
+    clanSchema.statics.addScore = function(name, value, cb) {
+      var that = this;
+      var member = this.findOne({ "members.name": name}, function(err, clan) {
+          var member = _.find(clan.members, ['name', name]);
+          member.score = member.score + value;
+          clan.save(function(err) {
+            if (!err) {
+              that.scores(cb);
+            }
+          });
+        });
     };
 
     module.exports = mongoose.model('clans', clanSchema);
