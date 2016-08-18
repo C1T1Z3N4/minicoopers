@@ -18,9 +18,13 @@
 
     app.get("/api/clans", function(req, res) {
         clans.all(function(err, clans) {
-            if (clans) {
+            if (err) {
+                log.err("Error occurred gettings clans: " + err);
+                res.status(500).send('Server error.  Check the logs');
+            } else if (clans) {
                 res.send(clans);
             } else {
+                log.warn('Error occurred getting clans: clans not found');
                 res.status(404).send('Not found');
             }
         })
@@ -28,9 +32,13 @@
 
     app.get("/api/scores", function(req, res) {
         clans.scores(function(err, scores) {
-            if (clans) {
+            if (err) {
+                log.err("Error occurred gettings scores: " + err);
+                res.status(500).send('Server error.  Check the logs');
+            } else if (scores) {
                 res.send(scores);
             } else {
+                log.warn('Error occurred getting scores: scores not found');
                 res.status(404).send('Not found');
             }
         })
@@ -44,10 +52,14 @@
         log.info('Adding ' + value + ' to ' + name);
 
         clans.addScore(name, value, function(err, scores) {
-            if (scores) {
+            if (err) {
+                log.err('Error occurred adding score: ' + err);
+                res.status(500).send('Server error.  Check the logs');
+            } else if (scores) {
                 log.info('Added ' + value + ' to ' + name);
                 res.send(scores);
             } else {
+                log.warn('Error occurred adding score: scores not found');
                 res.status(404).send('Not found');
             }
         })
@@ -60,10 +72,14 @@
         log.info('Taking ' + value + ' from ' + name);
 
         clans.takeScore(name, value, function(err, scores) {
-            if (scores) {
+            if (err) {
+                log.err('Error occurred taking score: ' + err);
+                res.status(500).send('Server error.  Check the logs');
+            } else if (scores) {
                 log.info('Took ' + value + ' from ' + name);
                 res.send(scores);
             } else {
+                log.warn('Error occurred taking score: scores not found');
                 res.status(404).send('Not found');
             }
         })
