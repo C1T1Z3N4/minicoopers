@@ -55,7 +55,7 @@ var initialiseFullPage = function() {
 var initialiseCountdown = function() {
 var timerId =
   countdown(
-    new Date(2016, 8),
+    moment().endOf('month'),
     function(ts) {
       document.getElementById('countdown').innerHTML = ts.toHTML();
     },
